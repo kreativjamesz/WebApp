@@ -21,3 +21,13 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Product::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'description' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia quos soluta atque suscipit dolore assumenda accusantium deleniti cum consequatur distinctio totam,', // lorem
+        'size' => $faker->numberBetween($min = 200, $max = 768),
+        'image' => '',
+        'category_id' => $faker->numberBetween($min = 1, $max = 10)
+    ];
+});
